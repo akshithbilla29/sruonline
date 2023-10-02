@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href=".\source\linklogo.jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>isource</title>
+    <script>
+      var elem = document.documentElement;
+
+      function openFullscreen() {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          elem = window.top.document.body;
+          elem.msRequestFullscreen();
+        }
+      }
+
+      function closeFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          window.top.document.msExitFullscreen();
+        }
+      }
+
+      var output = document.getElementById("myP");
+      document.addEventListener("fullscreenchange", function () {
+        output.innerHTML = "fullscreenchange event fired!";
+      });
+      document.addEventListener("mozfullscreenchange", function () {
+        output.innerHTML = "mozfullscreenchange event fired!";
+      });
+      document.addEventListener("webkitfullscreenchange", function () {
+        output.innerHTML = "webkitfullscreenchange event fired!";
+      });
+      document.addEventListener("msfullscreenchange", function () {
+        output.innerHTML = "msfullscreenchange event fired!";
+      });
+
+      
+        // Check if the user is not logged in (e.g., no session or cookie)
+        if (!isLoggedIn()) {
+          // Redirect the user back to the login page
+          window.location.href = "index.html";
+        }
+      
+        // Function to check if the user is logged in (you can implement your own logic here)
+        function isLoggedIn() {
+          // You can use cookies, local storage, or a server-side session to check the login status.
+          // For this example, I'll check if a session variable is set.
+          // Replace this with your actual login logic.
+          var loggedIn = sessionStorage.getItem("loggedIn");
+          return loggedIn === "true"; // Change this condition as per your implementation.
+        }
+      // Function to disable right-click
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    // Attach the event listener
+    document.addEventListener('contextmenu', disableRightClick);
+      
+    </script>
+    <style>
+      #title {
+        background-color: black;
+        text-align: center;
+        padding: 8px 8px;
+        font-family: cursive;
+        font-size: 130%;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      #b1 {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        background-color: rgba(92, 142, 151, 0.495);
+        color: rgb(243, 232, 243);;
+      }
+      
+      #b2 {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        background-color: rgba(154, 78, 107, 0.358);
+        color: rgb(243, 232, 243);;
+      }
+      #b3 {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        position: fixed; /* You can use 'absolute' if you prefer relative to a parent element */
+        top: 0px; /* Adjust the distance from the top */
+        right: 3px;
+        background-color: rgb(224, 227, 228);
+      }
+      body {
+        margin: 0;
+        background-color: black;
+        font-size: large;
+        font-family: "Segoe UI", Arial, sans-serif;
+        user-select: none;
+        overflow-y: hidden;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(54, 52, 52);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      li {
+        flex: 1;
+        max-width: 300px;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        padding: 10px 22px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: large;
+        text-align: center;
+      }
+
+      li a:hover {
+        background-color: rgba(188, 186, 186, 0.831);
+      }
+
+      h3 {
+        font-family: inherit;
+        font-weight: 600;
+      }
+      .container {
+        height: 100vh;
+        overflow-y: hidden;
+        background-color: white;
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      .main {
+        position: relative;
+        width: 100%;
+        height: 0;
+      }
+
+      h5 {
+        font-size: 13px;
+      }
+      li a:hover {
+        background-color: rgba(188, 186, 186, 0.831);
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .top {
+        max-width: 100%;
+        width: 100%;
+        background-color: black;
+      }
+
+      .ttlab-cont {
+        text-align: center;
+        background-color: black;
+      }
+
+      .ttlab {
+        color: white;
+        text-align: center;
+      }
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 56.25%;
+        min-height: 400px;
+        background-color: black;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      @media screen and (min-width: 600px) {
+        li {
+          width: 100px;
+        }
+        li a {
+          padding: 10px 22px;
+        }
+        .iframe-container {
+          min-height: 300px;
+        }
+      }
+      #e1 {
+        color: white;
+        font-size: 18px; 
+        font-weight: bold;  
+        text-transform: uppercase; 
+        
+      }
+      
+    </style>
+  </head>
+  <body>
+   
+ 
+      <button onclick="openFullscreen();" id="b1">Fullscreen Mode</button>
+
+       
+      
+      <button onclick="closeFullscreen();" id="b2">Exit</button>
+      <span id="e1"></span>
+    
+    <button onclick="redirectToIndex();" id="b3">Logout</button> 
+    <script>
+      function redirectToIndex() {
+        
+        window.location.href = "index.html";
+      }
+    </script>
+  
+    <ul>
+      <li>
+        <a
+          id="a"
+          href=".\source\web-f\timetable.html"
+          target="mainframe"
+          draggable="false"
+          >Home</a
+        >      
+      </li>
+      <li>
+        <a
+          id="b"
+          href=".\source\frame\Datastructures.html"
+          target="mainframe"
+          draggable="false"
+          >Data Structures</a
+        >
+      </li>
+      <li>
+        <a
+          id="c"
+          href=".\source\frame\hci.html"
+          target="mainframe"
+          draggable="false"
+          >HCI</a
+        >
+      </li>
+      <li>
+        <a
+          id="d"
+          href=".\source\frame\dms.html"
+          target="mainframe"
+          draggable="false"
+          >DMS</a
+        >
+      </li>
+      <li>
+        <a
+          id="e"
+          href=".\source\frame\mpca.html"
+          target="mainframe"
+          draggable="false"
+          >MPCA</a
+        >
+      </li>
+      <li>
+        <a
+          id="f"
+          href=".\source\frame\ps.html"
+          target="mainframe"
+          draggable="false"
+          >P & S</a
+        >
+      </li>
+    </ul>
+<hr>
+    <div class="iframe-container">
+      <iframe
+        id="main"
+        src=".\source\web-f\timetable.html"   
+        frameborder="10"
+        name="mainframe"></iframe>
+    </div>
+
+    <script src=".\source\index.js"></script>
+  </body>
+</html>
