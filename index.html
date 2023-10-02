@@ -79,8 +79,11 @@
       function formlogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        var validUsernameRange = /^2203A51[0-9]{3}$/;
+        var validUsernameRange = /^2203A51[0-9]{3}$/;//for 'A'
         var validPasswordRange = /^2203A51[0-9]{3}$/;
+
+        var usea = /^2203a51[0-9]{3}$/;//for 'a'
+        var passa = /^2203a51[0-9]{3}$/;
 
         if (username === "" || password === "") {
           alert("Please fill in both usernumber and password fields!");
@@ -91,7 +94,15 @@
         ) {
           sessionStorage.setItem("loggedIn", "true");
           window.location.href = "mainpage.html";
-        } else {
+        }
+        else if (
+          usea.test(username) &&
+          passa.test(password)
+        ) {
+          sessionStorage.setItem("loggedIn", "true");
+          window.location.href = "mainpage.html";
+        }
+        else {
           alert("Invalid Credentials!");
         }
       }
