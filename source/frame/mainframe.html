@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        background-image: url("main.jpg");
+      }
+
+      iframe {
+        height: 100vh;
+        border-color: black;
+      }
+    </style>
+    <script>
+      // Function to disable right-click
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    // Attach the event listener
+    document.addEventListener('contextmenu', disableRightClick);
+
+    </script>
+  </head>
+  <body></body>
+</html>

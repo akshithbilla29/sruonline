@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Function to disable right-click
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    // Attach the event listener
+    document.addEventListener('contextmenu', disableRightClick);
+
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: rgb(11, 1, 1);
+      }
+
+      .r {
+        background-color: rgba(143, 165, 187, 0.297);
+        text-align: center;
+        padding: 15px;
+        font-size: medium;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 30px 10px auto;
+      }
+      .v {
+        background-color: rgba(234, 56, 79, 0.724);
+        text-align: center;
+        padding: 15px;
+        font-size: large;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(243, 232, 243);
+      }
+      .r:hover {
+        background-color: rgba(188, 186, 186, 0.831);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="v" href="..\cont\dms\dmshomebg.html" target="rightframe">DMS</a>
+
+    <a class="r" href="..\cont\dms\dmsunit1cont.html" target="rightframe"
+      >UNIT-1</a
+    >
+
+    <a class="r" href="..\cont\dms\dmsunit2.html" target="rightframe">UNIT-2</a>
+
+    <a class="r">UNIT-3</a>
+
+    <a class="r">UNIT-4</a>
+
+    <a class="r">UNIT-5</a>
+    <script src="./ind/left.js"></script>
+  </body>
+</html>
