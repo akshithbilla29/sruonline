@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Study Portal</title>
+    <title>College Login Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
@@ -82,14 +82,17 @@
         var validUsernameRange = /^2203A51[0-9]{3}$/;
         var validPasswordRange = /^2203A51[0-9]{3}$/;
 
-        if (
+        if (username === "" || password === "") {
+          alert("Please fill in both usernumber and password fields!");
+        } 
+        else if (
           validUsernameRange.test(username) &&
           validPasswordRange.test(password)
         ) {
           sessionStorage.setItem("loggedIn", "true");
           window.location.href = "mainpage.html";
         } else {
-          alert("Invalid Details!");
+          alert("Invalid Credentials!");
         }
       }
       
